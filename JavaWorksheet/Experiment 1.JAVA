@@ -1,3 +1,7 @@
+Aim: 
+Create a class Animal with a method makeSound() that outputs a generic soumd. The class should further contain derived classes.
+    
+Code:    
 class Animal {
     void makeSound() {
         System.out.println("Some generic animal sound");
@@ -33,3 +37,9 @@ public class Main {
     }
 }
 
+
+OUTPUT:
+Woof! Woof!
+Meow! Meow!    
+Woof! Woof!
+Meow! Meow!    
