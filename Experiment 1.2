@@ -1,0 +1,65 @@
+Aim: Write a program that takes two strings representing numbers, converts them to wrapper classes, and performs basic arithmetic operations (addition, subtraction, multiplication, division).
+Code:
+import java.util.Scanner;
+
+public class ArithmeticOperations {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the two numbers as strings
+        System.out.print("Enter the first number: ");
+        String num1String = scanner.nextLine();
+        System.out.print("Enter the second number: ");
+        String num2String = scanner.nextLine();
+
+        try {
+            // Convert the string inputs to Integer or Double based on input type
+            Integer num1 = Integer.valueOf(num1String);
+            Integer num2 = Integer.valueOf(num2String);
+
+            // Perform basic arithmetic operations
+            System.out.println("Addition: " + (num1 + num2));
+            System.out.println("Subtraction: " + (num1 - num2));
+            System.out.println("Multiplication: " + (num1 * num2));
+            System.out.println("Division: " + (num1 / num2));
+
+        } catch (NumberFormatException e) {
+            // Handle invalid number format
+            System.out.println("Invalid input! Please enter valid integers.");
+        }
+
+        try {
+            // For floating-point numbers, using Double
+            Double num1Double = Double.valueOf(num1String);
+            Double num2Double = Double.valueOf(num2String);
+
+            // Perform basic arithmetic operations for floating-point numbers
+            System.out.println("Addition (as Double): " + (num1Double + num2Double));
+            System.out.println("Subtraction (as Double): " + (num1Double - num2Double));
+            System.out.println("Multiplication (as Double): " + (num1Double * num2Double));
+            if (num2Double != 0) {
+                System.out.println("Division (as Double): " + (num1Double / num2Double));
+            } else {
+                System.out.println("Cannot divide by zero.");
+            }
+        } catch (NumberFormatException e) {
+            // Handle invalid number format
+            System.out.println("Invalid input! Please enter valid floating-point numbers.");
+        }
+
+        scanner.close();
+    }
+}
+
+Output:
+Enter the first number: 10
+Enter the second number: 5
+Addition (as Integer): 15
+Subtraction (as Integer): 5
+Multiplication (as Integer): 50
+Division (as Integer): 2
+Addition (as Double): 15.0
+Subtraction (as Double): 5.0
+Multiplication (as Double): 50.0
+Division (as Double): 2.0
